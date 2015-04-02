@@ -1,31 +1,25 @@
 # Deflect
 
-TODO: Write a gem description
+Do you ever write `Users.all` when you meant `User.all`? Happened to me once.
 
-## Installation
+![Once ...](http://i.imgur.com/foTwnH4.jpg)
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'deflect'
+```
+[1] pry(main)> Users.all
+NameError: uninitialized constant Users
+from (pry):1:in `__pry__'
+[2] pry(main)> require "deflect"
+=> true
+[3] pry(main)> Users.all
+Did you mean `User`?
+  User Load (1.5ms)  SELECT "users".* FROM "users"
+=> [#<User:0x007fa7b808c980
+  id: 1,
+  ...
 ```
 
-And then execute:
+## FAQ
 
-    $ bundle
+*Is this a good idea?*
 
-Or install it yourself as:
-
-    $ gem install deflect
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/deflect/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+One could argue that it's no worse of an idea than constant autoloading in the first place.
