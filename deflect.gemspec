@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = Deflect::VERSION
   spec.authors       = ["James Dabbs"]
   spec.email         = ["jamesdabbs@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.summary       = %q{Automatically fix mis-pluralized model names}
+  spec.description   = spec.summary
+  spec.homepage      = "http://github.com/jamesdabbs/deflect"
+  spec.license       = "WTFPL"
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
